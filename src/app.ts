@@ -1,15 +1,15 @@
-import express from "express";
-import * as firebase from 'firebase-admin';
+import { readFile, writeFile } from "fs";
+import { battleship } from "./battleship";
+const filePath = "assets";
 
-const app = express();
-const port = 3000;
-app.get('/', (req, res) => {
-    res.send('GET request is working')
-});
-
-app.listen(port, err => {
+readFile(filePath + "/gamedata.txt", (err, data) => {
     if (err) {
-        return console.error(err);
+        console.log(err);
+        return;
     }
-    return console.log(`server is listening on ${port}`)
+    const output = battleship(data.toString());
+    writeFile(filePath + "/output.txt", output, function (err) {
+        if (err) throw err;
+        console.log("Saved! Check assets/output.txt");
+    });
 });

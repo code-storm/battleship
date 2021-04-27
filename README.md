@@ -4,7 +4,7 @@
   <img src="./code-storm-image.jpeg" alt="code-storm" width="400" />
 </p>
 
-<h1 align="center">Node Typescript Express Boilerplate</h1>
+<h1 align="center">Battleship game</h1>
 
 <p align="center">
   <img src="https://david-dm.org/code-storm/node-typescript-express.svg"/>
